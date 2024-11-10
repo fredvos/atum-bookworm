@@ -26,6 +26,11 @@ $ make build
 - Download a recent MIT licensed version of PlantUML as a .jar file
   and store it in a directory.
   I used ~/share/java/plantuml-mit-1.2024.7.jar for this
+- Make sure you have a Java JRE installed;
+  in Debian install the 'default-jre-headless' package
+  if you have not yet installed a JRE.
+- Make sure GraphViz is installed;
+  Debian package 'graphviz'.
 - Create a bash script ~/.local/bin/plantuml as shown below
 - Make the script executable
 - In the doc-directory use make images to generate new images after a change
