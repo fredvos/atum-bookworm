@@ -4,8 +4,6 @@
 
 FROM debian:bookworm-slim
 
-MAINTAINER Fred Vos <fred.vos@mokolo.org>
-
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -qq \
@@ -16,7 +14,7 @@ RUN apt-get update -qq \
     && locale-gen C.UTF-8 \
     && dpkg-reconfigure locales \
     && /usr/sbin/update-locale LANG=C.UTF-8 \
-    && ln -sf /usr/share/zoneinfo/Europe/Amsterdam
+    && ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 
 RUN echo 'en_US.UTF-8 UTF-8' >> /etc/locale.gen \
     && locale-gen
