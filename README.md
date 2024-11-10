@@ -14,3 +14,24 @@ In Wikipedia there's a lemma for [Atum](https://en.wikipedia.org/wiki/Atum)
 ## Inheritance
 
 ![Inheritance](doc/inheritance.png)
+
+## Build image
+
+```bash
+$ make build
+```
+
+## Build images in doc/
+
+- Download a recent MIT licensed version of PlantUML as a .jar file
+  and store it in a directory.
+  I used ~/share/java/plantuml-mit-1.2024.7.jar for this
+- Create a bash script ~/.local/bin/plantuml as shown below
+- Make the script executable
+- In the doc-directory use make images to generate new images after a change
+
+```bash
+#! /bin/bash
+
+java -jar ~/share/java/plantuml-mit-1.2024.7.jar $*
+```
