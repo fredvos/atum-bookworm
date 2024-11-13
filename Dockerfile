@@ -23,3 +23,6 @@ ENV LC_ALL C.UTF-8
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 
+COPY bin/get-tags /usr/local/bin/
+COPY bin/version-to-tags /usr/local/bin/
+RUN chmod +x /usr/local/bin/get-tags /usr/local/bin/version-to-tags
