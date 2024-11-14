@@ -13,11 +13,10 @@
 # Only echoes unique and non-empty strings
 
 full=$(cat | sed 's/^[^a-zA-Z0-9]*//' | sed 's/_/-/g' | sed 's/[^a-zA-Z0-9.-]//g')
-
-major=$(echo $full | awk '{split($0,parts,"."); print parts[1]}')
-if [[ $full =~ "\." ]]
+major=$(echo $full | sed -rn 's/([^.]*)\..*/\1/p')
+if [[ $full == *.* ]]
 then
-  minor=$(echo $full | awk '{split($0,parts,"."); printf "%s.%s", parts[1], parts[2]}')
+  minor=$(echo $full | sed -rn 's/([^.]*)\.([^.]*).*/\1.\2/p')
 fi
 
 if [ "$major" != "" ] && [ "$major" != "$full" ]
