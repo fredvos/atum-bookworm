@@ -12,6 +12,5 @@ atum : parent = debian:bookworm-slim
 atum : :12
 atum : :bookworm
 atum : :YYYYMMDD-HHMISS
-atum : :latest
 @enduml
 
